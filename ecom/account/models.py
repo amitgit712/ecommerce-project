@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, password=None, **extra_fields):
+    def create_user(self, email, password, **extra_fields):
         """Create and save user"""
         if not email:
             raise ValueError('User must have an email address')
@@ -55,4 +55,4 @@ class ShippingAddress(models.Model):
     zipcode = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.user
+        return self.user.email

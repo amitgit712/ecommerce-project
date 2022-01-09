@@ -8,7 +8,7 @@ class Product(models.Model):
     description = models.CharField(max_length=250)
     price = models.IntegerField(default=0)
     stock = models.IntegerField(default=0)
-    iamge = models.FileField(
+    image = models.FileField(
             upload_to='images/product/',
             null=True, blank=True
             )
