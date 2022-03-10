@@ -45,9 +45,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 class ShippingAddress(models.Model):
     """model for User Shiping Address"""
     user = models.ForeignKey(
-            User, on_delete=models.CASCADE,
-            null=True, blank=True
-            )
+        User, on_delete=models.CASCADE,
+        null=True, blank=True
+    )
     country = models.CharField(max_length=150)
     street = models.CharField(max_length=250)
     state = models.CharField(max_length=150)
